@@ -8,7 +8,7 @@ const MngEvtol = () => {
       <SideBar/>
       <div className="mng">
          <div className="text">
-            <h3>All Evtol Devices and their features</h3>
+            <h3>EVTOL Drones & their features</h3>
          </div>
       <table className='tab'>
        <tr className='thead'>

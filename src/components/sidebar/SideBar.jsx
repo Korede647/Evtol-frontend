@@ -59,7 +59,7 @@ const SideBar = () => {
             color: '#95929a'
         }
         }}>
-        <SiCloudron />Manage Evtol
+        <SiCloudron />Manage EVTOL
             </NavLink>
       </div>
 
@@ -77,7 +77,7 @@ const SideBar = () => {
             color: '#95929a'
         }
         }}>
-         <BsFillAirplaneFill />   Load Evtol
+         <BsFillAirplaneFill />   Load EVTOL
             </NavLink>
       </div>
 
