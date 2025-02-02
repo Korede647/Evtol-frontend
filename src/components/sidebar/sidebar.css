@@ -9,7 +9,7 @@
     font-family: "Nunito Sans", serif;
     display: flex;
     flex-direction: column;
-    /* gap: 10px; */
+    gap: 7px;
 }
 .head{
     width: 85%;
