@@ -1,0 +1,35 @@
+.dashMain{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    gap: 20px;
+}
+
+.dash{
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-top: 20px;
+    font-family: "Nunito Sans", serif;
+    overflow-y: scroll;
+    /* border: solid red; */
+    display: flex;
+    gap: 30px;
+}
+.first{
+    width: 100%;
+    height: 350px;
+}
+
+.dashImg{
+    width: 60%;
+    height: 100%;
+    border-radius: 10px;
+}
+.dashImg> img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
