@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./mngEvtol.css"
 import SideBar from '../../components/sidebar/SideBar'
 
 const MngEvtol = () => {
+    const [evtol, setEvtol] = useState([])
+
+    useEffect(() => {
+        const fetchData = async () =>{
+           const response = await axios.get()
+        }
+    })
+
   return (
     <div className='mngMain'>
       <SideBar/>
@@ -19,13 +27,13 @@ const MngEvtol = () => {
         <th>Status</th>
        </tr>
 
-        <tr className='evtol'>
+        <tbody className='evtol'>
             <td>ENENNFJJKKSK</td>
             <td>CRUISERWEIGHT</td>
             <td>400.0</td>
             <td>90%</td>
             <td> DELIVERING</td>
-            </tr>
+            </tbody>
       </table>
 
       </div>

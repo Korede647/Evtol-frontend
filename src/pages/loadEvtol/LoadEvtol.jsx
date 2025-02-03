@@ -12,7 +12,9 @@ const LoadEvtol = () => {
            <h3> Load EVTOL with Medications</h3>
             <div className="loadSN">
                 <label htmlFor="">EVTOL Serial Number:</label>
-                <input type="text" placeholder='Input a valid EVTOL serial number' />
+                <select name="" id="">
+                  <option value="">Input a valid EVTOL serial number</option>
+                </select>
             </div>
 
             <div className="loadSN">

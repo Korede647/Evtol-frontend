@@ -65,7 +65,7 @@
     color: #2e2b2b;
 }
 
-.loadSN> textarea, .loadSN>input{
+.loadSN> textarea, .loadSN>select{
     height: 65px;
     resize: none;
     font-family: "Nunito Sans", serif;
@@ -73,6 +73,7 @@
     border: solid 1px #95929aa1;
     outline: none;
     padding: 15px;
+    color: #555;
 }
 
 .formLoad> button{
