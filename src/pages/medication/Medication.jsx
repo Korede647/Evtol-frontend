@@ -14,10 +14,10 @@ const Medication = () => {
         </div>
 
         <div className="medicCards">
-            
+
           <div className="card">
             <div className="image">
-                <img src={Test} alt="" />
+                <img src= "" alt="" />
             </div>
             <div className="medicText">
                 <p>Name: <b>PARACETEMOLARMEET</b></p>
