@@ -7,6 +7,7 @@ import Medication from './pages/medication/Medication'
 import LoadEvtol from './pages/loadEvtol/LoadEvtol'
 import Delivery from './pages/delivery/Delivery'
 import Dashboard from './pages/dashBody/Dashboard'
+import LoadMedic from './pages/LoadMedic/LoadMedic'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
          <Route path= '/manageEvtol' element = {<MngEvtol/>} />
          <Route path='/medications' element = {<Medication/>} />
          <Route path='/loadEvtol' element = {<LoadEvtol/>} />
+         <Route path='/loadedMedic' element = {<LoadMedic/>} />
          <Route path='/delivery' element = {<Delivery/>} />
       </Routes>
     </Router>

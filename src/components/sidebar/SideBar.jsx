@@ -2,7 +2,7 @@ import React from 'react'
 import "./sidebar.css"
 import { BsFillAirplaneFill } from "react-icons/bs";
 import { FaMoneyCheck } from "react-icons/fa6";
-import { MdOutlineManageHistory} from "react-icons/md";
+import { MdAssuredWorkload, MdOutlineManageHistory} from "react-icons/md";
 import { IoMdSettings } from "react-icons/io";
 import { NavLink } from 'react-router-dom';
 import { GiDeliveryDrone } from 'react-icons/gi';
@@ -98,6 +98,25 @@ const SideBar = () => {
          <TbMedicalCrossFilled />  Medications
             </NavLink>
       </div>
+
+      <div className="usersideDiv">
+      <NavLink 
+      className= "link"
+      to="/loadedMedic" 
+        style={({isActive}) => {
+          return isActive ?  {
+            color: ' #95929a',
+            backgroundColor: "rgb(218, 236, 252)",
+            borderRadius: "5px",
+            boxShadow: "0px 2px 3px 0px grey"
+          } : {
+            color: '#95929a'
+        }
+        }}>
+        <MdAssuredWorkload /> Loaded Medication
+            </NavLink>
+      </div>
+
 
       <div className="usersideDiv">
       <NavLink 

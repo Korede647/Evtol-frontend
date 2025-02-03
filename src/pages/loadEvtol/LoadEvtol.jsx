@@ -13,7 +13,7 @@ const LoadEvtol = () => {
             <div className="loadSN">
                 <label htmlFor="">EVTOL Serial Number:</label>
                 <select name="" id="">
-                  <option value="">Input a valid EVTOL serial number</option>
+                  <option value="">Valid IDLE EVTOL serial number</option>
                 </select>
             </div>
 

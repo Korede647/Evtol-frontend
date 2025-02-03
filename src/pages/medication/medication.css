@@ -64,6 +64,7 @@
     display: flex;
     border: solid 2px rgb(216, 214, 214);
     border-radius: 5px;
+    padding-right: 5px;
 }
 .image{
     width: 40%;
@@ -86,4 +87,11 @@
     flex-direction: column;
     gap: 4px;
     color: rgba(0, 0, 0, 0.795);
+}
+
+.medicText> p{
+    font-size: 13px;
+}
+.medicText> p> b{
+    font-size: 16px;
 }

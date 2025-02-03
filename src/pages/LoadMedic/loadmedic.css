@@ -1,0 +1,15 @@
+.medicHeader{
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.795);
+    margin-bottom: 10px;
+}
+.cardLoad{
+    width: max-content;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: solid 2px rgb(216, 214, 214);
+    border-radius: 5px;
+    padding: 15px;
+}
