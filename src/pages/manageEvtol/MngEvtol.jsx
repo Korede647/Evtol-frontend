@@ -1,15 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import "./mngEvtol.css"
 import SideBar from '../../components/sidebar/SideBar'
+import { VIEWALLEVTOL_URL } from '../../components/API_URL'
+import axios from 'axios'
 
 const MngEvtol = () => {
     const [evtol, setEvtol] = useState([])
 
     useEffect(() => {
         const fetchData = async () =>{
-           const response = await axios.get()
-        }
-    })
+           const response = await axios.get(VIEWALLEVTOL_URL)
+           if(response.data.status === "bad request"){
+            setEvtol(response.data)
+           } else{
+            console.log(response.data.message);
+            <p>Error Retrieving Evtol</p>
+           }
+        };
+        fetchData();
+    }, [])
 
   return (
     <div className='mngMain'>
@@ -18,23 +27,31 @@ const MngEvtol = () => {
          <div className="text">
             <h3>EVTOL Drones & their features</h3>
          </div>
-      <table className='tab'>
-       <tr className='thead'>
-        <th>Serial No</th>
-        <th>Model</th>
-        <th>Weight Limit</th>
-        <th>Battery Capacity</th>
-        <th>Status</th>
-       </tr>
-
-        <tbody className='evtol'>
-            <td>ENENNFJJKKSK</td>
-            <td>CRUISERWEIGHT</td>
-            <td>400.0</td>
-            <td>90%</td>
-            <td> DELIVERING</td>
-            </tbody>
-      </table>
+         {evtol.length > 0 ? (
+           <table className='tab'>
+           <tr className='thead'>
+            <th>Serial No</th>
+            <th>Model</th>
+            <th>Weight Limit</th>
+            <th>Battery Capacity</th>
+            <th>Status</th>
+           </tr>
+               <tbody>
+               {evtol.map((evtol) => (
+               <tr className='evtol'>
+                <td>{evtol.serialNo}</td>
+                <td>{evtol.model}</td>
+                <td>{evtol.weightLimit}</td>
+                <td>{evtol.batteryCapacity}%</td>
+                <td>{evtol.status}</td>
+                </tr>
+               ))}
+               </tbody>
+               </table>
+         ): (
+          <p>No Evtols Found </p>
+         )}
+      
 
       </div>
     </div>
