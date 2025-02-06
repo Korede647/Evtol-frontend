@@ -10,8 +10,10 @@ const MngEvtol = () => {
     useEffect(() => {
         const fetchData = async () =>{
            const response = await axios.get(VIEWALLEVTOL_URL)
-           if(response.data.status === "bad request"){
+           if(response.status === 200){
             setEvtol(response.data)
+            console.log(response.data);
+            
            } else{
             console.log(response.data.message);
             <p>Error Retrieving Evtol</p>

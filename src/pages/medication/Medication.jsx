@@ -10,8 +10,9 @@ const Medication = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(MEDICATIONS_URL)
-      if(response.data.status === "success"){
+      if(response.data.status === 200){
         setMedication(response.data)
+        console.log(response.data)
       }else{
         console.log(response.data.message);
         <p>Error Retrieving Medications</p>
@@ -35,7 +36,7 @@ const Medication = () => {
              {medication.map((medic) => (
             <div className="card">
                  <div className="image">
-                 <img src= {medic.medicImage} alt="" />
+                 <img src= {medic.image} alt="" />
              </div>
              <div className="medicText">
                  <p>Name: <b>{medic.name}</b></p>
