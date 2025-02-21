@@ -10,8 +10,8 @@ const Medication = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(MEDICATIONS_URL)
-      if(response.data.status === 200){
-        setMedication(response.data)
+      if(response.status === 200){
+        setMedication(response.data.medics)
         console.log(response.data)
       }else{
         console.log(response.data.message);
