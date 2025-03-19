@@ -3,9 +3,12 @@ import "./mngEvtol.css"
 import SideBar from '../../components/sidebar/SideBar'
 import { VIEWALLEVTOL_URL } from '../../components/API_URL'
 import axios from 'axios'
+import Pagination from '../../components/Pagination'
 
 const MngEvtol = () => {
     const [evtol, setEvtol] = useState([])
+    const [currentPage, setCurrentPage] = useState(1)
+    const [postPerPage] = useState(5)
 
     useEffect(() => {
         const fetchData = async () =>{
@@ -22,6 +25,17 @@ const MngEvtol = () => {
         fetchData();
     }, [])
 
+    const indexOfLastPost = currentPage * postPerPage;
+  const indexOfFirstPost = indexOfLastPost - postPerPage;
+  const currentEvtols = evtol.slice(indexOfFirstPost, indexOfLastPost);
+
+    // const paginate = (num) => setCurrentPage(num)
+    const paginate = (num) => {
+      if (num >= 1 && num <= Math.ceil(evtol.length / postPerPage)) {
+        setCurrentPage(num);
+      }
+    }
+
   return (
     <div className='mngMain'>
       <SideBar/>
@@ -29,7 +43,7 @@ const MngEvtol = () => {
          <div className="text">
             <h3>EVTOL Drones & their features</h3>
          </div>
-         {evtol.length > 0 ? (
+         {currentEvtols.length > 0 ? (
            <table className='tab'>
            <tr className='thead'>
             <th>Serial No</th>
@@ -39,7 +53,7 @@ const MngEvtol = () => {
             <th>Status</th>
            </tr>
                <tbody>
-               {evtol.map((evtol) => (
+               {currentEvtols.map((evtol) => (
                <tr className='evtol'>
                 <td>{evtol.serialNo}</td>
                 <td>{evtol.model}</td>
@@ -54,10 +68,16 @@ const MngEvtol = () => {
           <p>No Evtols Found </p>
          )}
       
+      <Pagination
+          postPerPage={postPerPage}
+          totalPosts={evtol.length}
+          paginate={paginate}
+          currentPage={currentPage}
+      />
 
       </div>
     </div>
   )
 }
 
-export default MngEvtol
+export default MngEvtol;
