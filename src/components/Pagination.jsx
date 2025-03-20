@@ -8,12 +8,12 @@ const Pagination = ({ postPerPage, totalPosts, paginate, currentPage }) => {
     pageNumbers.push(i);
   }
   return (
-    <div className="w-full h-13 flex justify-center pt-10 ml-200 gap-10 border">
+    <div className="w-full h-25 flex justify-center items-center gap-10 ">
   
           <button
             onClick={() => paginate(currentPage - 1)}
             disabled={currentPage === 1}
-            className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${
+            className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300  ${
               currentPage === 1
                 ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                 : "bg-blue-700 text-white hover:bg-blue-800 hover:scale-105 cursor-pointer shadow-md"
