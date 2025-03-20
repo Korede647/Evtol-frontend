@@ -54,26 +54,30 @@ const MngEvtol = () => {
            </tr>
                <tbody>
                {currentEvtols.map((evtol) => (
-               <tr className='evtol'>
+               <tr className='evtol' >
                 <td>{evtol.serialNo}</td>
                 <td>{evtol.model}</td>
                 <td>{evtol.weightLimit}</td>
                 <td>{evtol.batteryCapacity}%</td>
-                <td>{evtol.status}</td>
+                <td className='text-blue-800 font-bold'>{evtol.status}</td>
                 </tr>
                ))}
                </tbody>
+
                <Pagination
           postPerPage={postPerPage}
           totalPosts={evtol.length}
           paginate={paginate}
           currentPage={currentPage}
       />
+
                </table>
                
          ): (
           <p>No Evtols Found </p>
          )}
+
+
       
 
       </div>

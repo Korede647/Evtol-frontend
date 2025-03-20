@@ -8,9 +8,8 @@ const Pagination = ({ postPerPage, totalPosts, paginate, currentPage }) => {
     pageNumbers.push(i);
   }
   return (
-    <div className="flex justify-center mt-4">
-      {/* <ul className="pagination flex flex-row gap-x-4 list-none"> */}
-        {/* <li> */}
+    <div className="w-full h-13 flex justify-center pt-10 ml-200 gap-10 border">
+  
           <button
             onClick={() => paginate(currentPage - 1)}
             disabled={currentPage === 1}
@@ -22,21 +21,9 @@ const Pagination = ({ postPerPage, totalPosts, paginate, currentPage }) => {
           >
            <IoIosArrowBack size={20}/>
           </button>
-        {/* </li> */}
-        {/* {pageNumbers.map((number) => (
-          <li
-            onClick={() => paginate(number)}
-            key={number}
-            className="px-3 py-2 bg-[#000080] rounded-md hover:bg-blue-600 cursor-pointer transition-transform duration-300"
-          >
-            <a href="#" className="text-white">
-              {" "}
-              {number}{" "}
-            </a>
-          </li>
-        ))} */}
+    
 
-        {/* <li> */}
+
           <button
             onClick={() => paginate(currentPage + 1)}
             disabled={currentPage === totalPages}
@@ -48,8 +35,8 @@ const Pagination = ({ postPerPage, totalPosts, paginate, currentPage }) => {
           >
           <IoIosArrowForward size={20}/>
           </button>
-        {/* </li> */}
-      {/* </ul> */}
+
+ 
     </div>
   );
 };
