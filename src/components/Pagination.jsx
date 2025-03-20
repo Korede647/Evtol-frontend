@@ -1,4 +1,5 @@
 import React from "react";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const Pagination = ({ postPerPage, totalPosts, paginate, currentPage }) => {
   const pageNumbers = [];
@@ -8,20 +9,20 @@ const Pagination = ({ postPerPage, totalPosts, paginate, currentPage }) => {
   }
   return (
     <div className="flex justify-center mt-4">
-      <ul className="pagination flex flex-row gap-x-4 list-none">
-        <li>
+      {/* <ul className="pagination flex flex-row gap-x-4 list-none"> */}
+        {/* <li> */}
           <button
             onClick={() => paginate(currentPage - 1)}
             disabled={currentPage === 1}
-            className={`px-4 py-2 rounded-md transition duration-300 ${
+            className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${
               currentPage === 1
                 ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                : "bg-blue-800 text-white hover:bg-blue-900"
+                : "bg-blue-700 text-white hover:bg-blue-800 hover:scale-105 cursor-pointer shadow-md"
             }`}
           >
-            Previous
+           <IoIosArrowBack size={20}/>
           </button>
-        </li>
+        {/* </li> */}
         {/* {pageNumbers.map((number) => (
           <li
             onClick={() => paginate(number)}
@@ -35,20 +36,20 @@ const Pagination = ({ postPerPage, totalPosts, paginate, currentPage }) => {
           </li>
         ))} */}
 
-        <li>
+        {/* <li> */}
           <button
             onClick={() => paginate(currentPage + 1)}
             disabled={currentPage === totalPages}
-            className={`px-4 py-2 rounded-md transition duration-300 ${
+            className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${
               currentPage === totalPages
                 ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                : "bg-blue-800 text-white hover:bg-blue-900"
+                : "bg-blue-700 text-white hover:bg-blue-800 hover:scale-105 cursor-pointer shadow-md"
             }`}
           >
-            Next
+          <IoIosArrowForward size={20}/>
           </button>
-        </li>
-      </ul>
+        {/* </li> */}
+      {/* </ul> */}
     </div>
   );
 };

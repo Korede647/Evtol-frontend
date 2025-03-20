@@ -63,17 +63,18 @@ const MngEvtol = () => {
                 </tr>
                ))}
                </tbody>
-               </table>
-         ): (
-          <p>No Evtols Found </p>
-         )}
-      
-      <Pagination
+               <Pagination
           postPerPage={postPerPage}
           totalPosts={evtol.length}
           paginate={paginate}
           currentPage={currentPage}
       />
+               </table>
+               
+         ): (
+          <p>No Evtols Found </p>
+         )}
+      
 
       </div>
     </div>
