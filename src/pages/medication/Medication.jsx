@@ -8,7 +8,7 @@ import Pagination from '../../components/Pagination'
 const Medication = () => {
   const [medication, setMedication] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
-  const [postPerPage] = useState(5)
+  const [postPerPage] = useState(6)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,12 +24,12 @@ const Medication = () => {
     fetchData();
   }, [])
 
-  const indexOfLastPost = currentPage * postPerPage
-  const indexOfFirstPost = indexOfLastPost - postPerPage
-  const currentMedics = medication.slice(indexOfFirstPost, indexOfLastPost)
+  const indexOfLastPost = currentPage * postPerPage;
+  const indexOfFirstPost = indexOfLastPost - postPerPage;
+  const currentMedics = medication.slice(indexOfFirstPost, indexOfLastPost);
 
   const paginate = (num) => {
-    if (num >= 1 && num <= Math.ceil(evtol.length / postPerPage)) {
+    if (num >= 1 && num <= Math.ceil(medication.length / postPerPage)) {
       setCurrentPage(num);
     }
   }
@@ -41,14 +41,14 @@ const Medication = () => {
 
         <div className="medictop">
         <h2>Medications</h2>
-        <button>Add New Medication</button>
+        <button className='cursor-pointer'>Add New Medication</button>
         </div>
 
          {currentMedics.length > 0 ? (
           <div>
         <div className="medicCards">
-             {medication.map((medic) => (
-            <div className="card">
+             {currentMedics.map((medic) => (
+            <div className="card" key= {medic.code}>
                  <div className="image">
                  <img src= {medic.image} alt="" />
              </div>

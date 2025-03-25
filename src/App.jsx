@@ -9,13 +9,15 @@ import Delivery from './pages/delivery/Delivery'
 import Dashboard from './pages/dashBody/Dashboard'
 import LoadMedic from './pages/LoadMedic/LoadMedic'
 import BatteryLog from './pages/batteryLog/BatteryLog'
+import Signup from './pages/Signup'
 
 function App() {
   return (
     <>
     <Router>
       <Routes>
-        <Route path='/' element = {<Dashboard/>}/>
+        <Route path='/' element = {<Signup/>} />
+        <Route path='/dashboard' element = {<Dashboard/>}/>
          <Route path= '/manageEvtol' element = {<MngEvtol/>} />
          <Route path='/medications' element = {<Medication/>} />
          <Route path='/loadEvtol' element = {<LoadEvtol/>} />

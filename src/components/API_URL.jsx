@@ -11,4 +11,6 @@ const AVAILABLEVTOL_URL = "http://localhost:7000/api/v1/evtol/"
 // const MEDICATIONS_URL = "https://kory617-evtol-backend.onrender.com/api/v1/evtol/allMedic"
 const MEDICATIONS_URL = "http://localhost:7000/api/v1/medications/"
 
-export {CREATEVTOL_URL, VIEWALLEVTOL_URL, AVAILABLEVTOL_URL, MEDICATIONS_URL}
+const CREATEUSER_URL = "http://localhost:7000/api/v1/users"
+
+export {CREATEVTOL_URL, VIEWALLEVTOL_URL, AVAILABLEVTOL_URL, MEDICATIONS_URL, CREATEUSER_URL}

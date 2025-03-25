@@ -30,7 +30,7 @@ const SideBar = () => {
       <div className="usersideDiv">
       <NavLink 
       className= "link"
-      to="/" 
+      to="/dashboard" 
         style={({isActive}) => {
           return isActive ?  {
             color: ' #95929a',
