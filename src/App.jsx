@@ -8,6 +8,7 @@ import LoadEvtol from './pages/loadEvtol/LoadEvtol'
 import Delivery from './pages/delivery/Delivery'
 import Dashboard from './pages/dashBody/Dashboard'
 import LoadMedic from './pages/LoadMedic/LoadMedic'
+import BatteryLog from './pages/batteryLog/BatteryLog'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
          <Route path='/loadEvtol' element = {<LoadEvtol/>} />
          <Route path='/loadedMedic' element = {<LoadMedic/>} />
          <Route path='/delivery' element = {<Delivery/>} />
+         <Route path='/batteryLog' element = {<BatteryLog/>} />
       </Routes>
     </Router>
 

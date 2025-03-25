@@ -40,7 +40,8 @@ const SideBar = () => {
           } : {
             color: '#95929a'
         }
-        }}>
+        }}
+        >
         <BiSolidDashboard/> Dashboard
             </NavLink>
       </div>

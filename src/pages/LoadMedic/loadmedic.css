@@ -3,11 +3,18 @@
     color: rgba(0, 0, 0, 0.795);
     margin-bottom: 10px;
 }
+.medicCard{
+    width: 97%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 15px;
+}
 .cardLoad{
     width: max-content;
     height: max-content;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     border: solid 2px rgb(216, 214, 214);
     border-radius: 5px;

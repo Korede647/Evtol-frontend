@@ -44,6 +44,7 @@ const MngEvtol = () => {
             <h3>EVTOL Drones & their features</h3>
          </div>
          {currentEvtols.length > 0 ? (
+          <div>
            <table className='tab'>
            <tr className='thead'>
             <th>Serial No</th>
@@ -63,6 +64,7 @@ const MngEvtol = () => {
                 </tr>
                ))}
                </tbody>
+               </table>
 
                <Pagination
           postPerPage={postPerPage}
@@ -70,8 +72,9 @@ const MngEvtol = () => {
           paginate={paginate}
           currentPage={currentPage}
       />
+      </div>
 
-               </table>
+               
                
          ): (
           <p>No Evtols Found </p>

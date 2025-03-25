@@ -3,9 +3,12 @@ import "./medication.css"
 import SideBar from '../../components/sidebar/SideBar'
 import axios from 'axios'
 import { MEDICATIONS_URL } from '../../components/API_URL'
+import Pagination from '../../components/Pagination'
 
 const Medication = () => {
   const [medication, setMedication] = useState([])
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postPerPage] = useState(5)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,6 +24,16 @@ const Medication = () => {
     fetchData();
   }, [])
 
+  const indexOfLastPost = currentPage * postPerPage
+  const indexOfFirstPost = indexOfLastPost - postPerPage
+  const currentMedics = medication.slice(indexOfFirstPost, indexOfLastPost)
+
+  const paginate = (num) => {
+    if (num >= 1 && num <= Math.ceil(evtol.length / postPerPage)) {
+      setCurrentPage(num);
+    }
+  }
+
   return (
     <div className='medicMain'>
        <SideBar/>
@@ -31,7 +44,8 @@ const Medication = () => {
         <button>Add New Medication</button>
         </div>
 
-         {medication.length > 0 ? (
+         {currentMedics.length > 0 ? (
+          <div>
         <div className="medicCards">
              {medication.map((medic) => (
             <div className="card">
@@ -45,6 +59,13 @@ const Medication = () => {
              </div>
              </div>
               ))}
+           </div>
+           <Pagination
+           postPerPage={postPerPage}
+           totalPosts={medication.length}
+           paginate={paginate}
+           currentPage={currentPage}
+           />
            </div>
           ): (
             <p>No Medications Found</p>

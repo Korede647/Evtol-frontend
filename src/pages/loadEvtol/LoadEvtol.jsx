@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./loadEvtol.css"
 import SideBar from '../../components/sidebar/SideBar'
 import { GiDeliveryDrone } from 'react-icons/gi'
 
 const LoadEvtol = () => {
+  const [loading, setLoading] = useState(false)
   return (
     <div className='loadMain'>
       <SideBar/>
@@ -25,8 +26,7 @@ const LoadEvtol = () => {
                  {/* onChange={(e) => setMedications(e.target.value.split(","))} */}
             </div>
             <button>
-            {/* {loading ? "Loading..." : "Load EVTOL"} */}
-            Load EVTOL
+            {loading ? "Loading..." : "Load EVTOL"}
             </button>
             {/* {message &&  */}
             <p className='message'>
