@@ -13,4 +13,6 @@ const MEDICATIONS_URL = "http://localhost:7000/api/v1/medications/"
 
 const CREATEUSER_URL = "http://localhost:7000/api/v1/users"
 
-export {CREATEVTOL_URL, VIEWALLEVTOL_URL, AVAILABLEVTOL_URL, MEDICATIONS_URL, CREATEUSER_URL}
+const LOGIN_URL = "http://localhost:7000/api/v1/auth/login"
+
+export {CREATEVTOL_URL, VIEWALLEVTOL_URL, AVAILABLEVTOL_URL, MEDICATIONS_URL, CREATEUSER_URL, LOGIN_URL}

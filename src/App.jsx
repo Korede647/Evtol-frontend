@@ -10,6 +10,7 @@ import Dashboard from './pages/dashBody/Dashboard'
 import LoadMedic from './pages/LoadMedic/LoadMedic'
 import BatteryLog from './pages/batteryLog/BatteryLog'
 import Signup from './pages/Signup'
+import Login from './pages/Login'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element = {<Signup/>} />
+        <Route path='/login' element = {<Login/>} />
         <Route path='/dashboard' element = {<Dashboard/>}/>
          <Route path= '/manageEvtol' element = {<MngEvtol/>} />
          <Route path='/medications' element = {<Medication/>} />

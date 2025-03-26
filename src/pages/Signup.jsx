@@ -46,7 +46,7 @@ const Signup = () => {
         if(response.status === 201){
             navigate("/logIn")
         }
-        console.log(response.data.data)
+        console.log(response.data)
       }catch(error){
         setError("Sign up failed. Please try again")
         console.log(error.response.data.data);
@@ -141,7 +141,7 @@ const Signup = () => {
 
       <div className="sm:flex sm:flex-row-reverse flex ">
         <button
-          className="w-fit rounded-lg text-sm px-5 py-3 focus:outline-none h-[50px] border bg-blue-900 hover:bg-blue-800 hover:cursor-pointer focus:bg-violet-700 border-violet-500-violet- text-white focus:ring-4 focus:ring-violet-200 hover:ring-4 hover:ring-violet-100 transition-all duration-300"
+          className="w-fit rounded-lg text-sm px-6 py-3 focus:outline-none h-[50px] border bg-blue-900 hover:bg-blue-800 hover:cursor-pointer focus:bg-violet-700 border-violet-500-violet- text-white focus:ring-4 focus:ring-violet-200 hover:ring-4 hover:ring-violet-100 transition-all duration-300"
           type="submit"
         >
           <div className="text-center">
