@@ -5,13 +5,8 @@ import { GiDeliveryDrone } from 'react-icons/gi'
 import { AVAILABLEVTOL_URL, LOADEVTOL_URL, MEDICATIONS_URL, VIEWALLEVTOL_URL } from '../../components/API_URL'
 import Select from 'react-select'
 import axios from 'axios'
-import Medication from '../medication/Medication'
 
-const options = [
-  { value: "like", label: "Dance" },
-  { value: "likee", label: "Love" },
-  { value: "likeee", label: "Crazy" },
-];
+
 
 const LoadEvtol = () => {
   const [loading, setLoading] = useState(false)
@@ -21,9 +16,14 @@ const LoadEvtol = () => {
   const [error, setError] = useState("")
   const [selectedMedics, setSelectedMedics] = useState([])
 
+  const Token = localStorage.getItem("Token")
   useEffect(() => {
     const fetchEvtol = async () => {
-      const response = await axios.get(AVAILABLEVTOL_URL)
+      const response = await axios.get(AVAILABLEVTOL_URL, {
+        headers: {
+          Authorization: `Bearer ${Token}`
+        }
+      })
       if(response.status === 200){
         const evtolOptions= response.data.map((serial) =>({
           value: serial.serialNo,
@@ -37,11 +37,15 @@ const LoadEvtol = () => {
     }
 
     const fetchMedics = async () => {
-      const response = await axios.get(MEDICATIONS_URL)
+      const response = await axios.get(MEDICATIONS_URL, {
+        headers: {
+          Authorization: `Bearer ${Token}`
+        }
+      })
       if(response.status === 200){
         const medicOptions = response.data.medics.map((medic) => ({
           value: medic.code,
-          label: medic.name + " " + medic.weight + "g"
+          label: medic.name + " " + medic.weight + "g" 
         }))
         setMedications(medicOptions)
       }else{
@@ -78,7 +82,13 @@ const LoadEvtol = () => {
         const response = await axios.post(`${LOADEVTOL_URL}/${selectedEvtol}`, {
           serialNo: selectedEvtol,
           medications: selectedMedics.map(med => med.value)
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${Token}`
+          }
         }
+        
       )
         if(response.status === 201){
           setLoading(false)
@@ -88,31 +98,9 @@ const LoadEvtol = () => {
           
         }
     }catch(error){
-      // console.log(error.response?.data?.message);
-
-      // catch (error) {
         console.log("Full error object:", error); // Log the entire error for debugging
-      
-        if (error.response) {
-          // Server responded with a status code other than 2xx
-          console.log("Error response:", error.response);
-          console.log("Error data:", error.response.data);
-          console.log("Error message:", error.response.data?.message);
-      
-          setError(error.response.data?.message || "Something went wrong on the server.");
-        } else if (error.request) {
-          // Request was made but no response received (e.g., network error)
-          console.log("No response received:", error.request);
-          setError("No response from the server. Please check your network.");
-        } else {
-          // Other errors (e.g., invalid request setup)
-          console.log("Request error:", error.message);
-          setError("An unexpected error occurred. Please try again.");
-        }
       }
       
-      
-    // }
    }
 
 

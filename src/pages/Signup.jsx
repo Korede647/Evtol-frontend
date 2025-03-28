@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CREATEUSER_URL } from "../components/API_URL";
+import Swal from "sweetalert2";
 
 const Signup = () => {
     const [firstName, setFirstName] = useState("")
@@ -44,13 +45,26 @@ const Signup = () => {
             password
         })
         if(response.status === 201){
-            navigate("/logIn")
+          Swal.fire({
+            icon: "success", 
+            title: "Success",
+            text: "Account created successfully",
+            // timer: 2000, 
+            // showConfirmButton: false
+          }).then(() => {
+            localStorage.setItem("userToken", response.data.id)
+            JSON.parse(localStorage.getItem("userToken"))
+            navigate("/logIn");
+          });
         }
-        console.log(response.data)
-      }catch(error){
-        setError("Sign up failed. Please try again")
-        console.log(error.response.data.data);
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Sign up failed. Please try again',
+        })
         
+      }catch(error){
+        console.log(error.response.data.data);
       }
     }
   return (

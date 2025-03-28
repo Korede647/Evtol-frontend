@@ -17,4 +17,12 @@ const LOGIN_URL = "http://localhost:7000/api/v1/auth/login"
 
 const LOADEVTOL_URL = "http://localhost:7000/api/v1/evtol/loadEvtol"
 
-export {CREATEVTOL_URL, VIEWALLEVTOL_URL, AVAILABLEVTOL_URL, MEDICATIONS_URL, CREATEUSER_URL, LOGIN_URL, LOADEVTOL_URL}
+const LOADEDMEDICATION_URL = "http://localhost:7000/api/v1/evtol/loadedMedication"
+
+const LOADEDEVTOL_URL = "http://localhost:7000/api/v1/evtol/loaded/Evtol"
+
+const DELIVERMEDICATION_URL = "http://localhost:7000/api/v1/evtol/deliveringMedications"
+
+const BATTERYLEVEL_URL = "http://localhost:7000/api/v1/evtol/batteryLevel"
+
+export {CREATEVTOL_URL, VIEWALLEVTOL_URL, BATTERYLEVEL_URL, DELIVERMEDICATION_URL, LOADEDEVTOL_URL, AVAILABLEVTOL_URL, MEDICATIONS_URL, CREATEUSER_URL, LOGIN_URL, LOADEVTOL_URL, LOADEDMEDICATION_URL}

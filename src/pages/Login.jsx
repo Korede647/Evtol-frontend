@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, {useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { LOGIN_URL } from '../components/API_URL'
+import Swal from 'sweetalert2'
 
 const Login = () => {
   const [email, setEmail] = useState("")
@@ -39,14 +40,34 @@ const Login = () => {
             password
         })
         if(response.status === 201){
+          Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: 'Logged in successfully!',
+            // showConfirmButton: false
+          }).then(() => {
+            localStorage.setItem("Token", response.data.accessToken)
             navigate("/dashboard")
+          })
             console.log(response.data)
             localStorage.setItem("Token", (response.data.accessToken))
             JSON.parse(localStorage.getItem("Token"))
         }
+
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Log in failed. Please try again',
+        })
    
     }catch(error){
-      setError("Log in failed. Please try again")
+      // Swal.fire({
+      //   icon: 'error',
+      //   title: 'Oops...',
+      //   text: 'Log in failed. Please try again',
+      // })
+      console.log(error);
+      
     }
   }
 return (

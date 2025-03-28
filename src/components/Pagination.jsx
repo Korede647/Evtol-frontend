@@ -1,14 +1,14 @@
 import React from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-const Pagination = ({ postPerPage, totalPosts, paginate, currentPage }) => {
+const Pagination = ({ postPerPage, totalPosts, paginate, currentPage}) => {
   const pageNumbers = [];
   const totalPages = Math.ceil(totalPosts / postPerPage)
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
   }
   return (
-    <div className="w-fit h-25 flex justify-center items-center gap-15 ml-auto ">
+    <div className= {`w-fit h-25 flex justify-center items-center gap-145 ml-15`}>
   
           <button
             onClick={() => paginate(currentPage - 1)}

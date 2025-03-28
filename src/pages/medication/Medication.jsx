@@ -4,15 +4,26 @@ import SideBar from '../../components/sidebar/SideBar'
 import axios from 'axios'
 import { MEDICATIONS_URL } from '../../components/API_URL'
 import Pagination from '../../components/Pagination'
+import Modal from '../../components/Modal'
 
 const Medication = () => {
+  const [isOpen, setIsOpen] = useState(false)
   const [medication, setMedication] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
   const [postPerPage] = useState(6)
 
+  const Token = localStorage.getItem("Token")
+  const handleModalDisplay = () => {
+    setIsOpen(true)
+  }
+
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(MEDICATIONS_URL)
+      const response = await axios.get(MEDICATIONS_URL, {
+        headers: {
+          Authorization: `Bearer ${Token}`
+        }
+      })
       if(response.status === 200){
         setMedication(response.data.medics)
         console.log(response.data)
@@ -41,7 +52,7 @@ const Medication = () => {
 
         <div className="medictop">
         <h2>Medications</h2>
-        <button className='cursor-pointer'>Add New Medication</button>
+        <button className='cursor-pointer' onClick={handleModalDisplay}>Add New Medication</button>
         </div>
 
          {currentMedics.length > 0 ? (
@@ -56,6 +67,7 @@ const Medication = () => {
                  <p>Name: <b>{medic.name}</b></p>
                  <p>Code: <b>{medic.code}</b></p>
                  <p>Weight: <b>{medic.weight}g</b></p>
+                 <p>Price: <b>N{medic.price}</b></p>
              </div>
              </div>
               ))}
@@ -65,6 +77,7 @@ const Medication = () => {
            totalPosts={medication.length}
            paginate={paginate}
            currentPage={currentPage}
+          
            />
            </div>
           ): (
@@ -73,6 +86,9 @@ const Medication = () => {
           
 
        </div>
+       {isOpen && (
+        <Modal/>
+       )}
     </div>
   )
 }
