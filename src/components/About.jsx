@@ -1,4 +1,4 @@
-import Navigation from "@/components/Navigation";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Target, Users, Lightbulb, Award, Heart, Leaf } from "lucide-react";
 import medicalDrone from "@/assets/medical-drone.jpg";
@@ -63,7 +63,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
+      <Navbar />
       
       <main className="pt-16">
         {/* Header */}
