@@ -10,10 +10,10 @@ import LoadMedic from './pages/LoadMedic/LoadMedic'
 import BatteryLog from './pages/batteryLog/BatteryLog'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
-import Home from "../pages/Home"
 import About from './components/About'
 import Contact from './components/Contact'
 import Gallery from './components/Gallery'
+import Home from './pages/Home'
 
 function App() {
   return (
