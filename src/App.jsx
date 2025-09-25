@@ -1,7 +1,6 @@
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
-import SideBar from './components/sidebar/SideBar'
 import MngEvtol from './pages/manageEvtol/MngEvtol'
 import Medication from './pages/medication/Medication'
 import LoadEvtol from './pages/loadEvtol/LoadEvtol'
@@ -11,14 +10,17 @@ import LoadMedic from './pages/LoadMedic/LoadMedic'
 import BatteryLog from './pages/batteryLog/BatteryLog'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
+import Home from "../pages/Home"
 
 function App() {
   return (
     <>
     <Router>
       <Routes>
-        <Route path='/' element = {<Signup/>} />
+        <Route path='/' element = {<Home/>} />
+        <Route path='/signup' element = {<Signup/>} />
         <Route path='/login' element = {<Login/>} />
+        <Route path='/gallery' element = {<Gallery/>} />
         <Route path='/dashboard' element = {<Dashboard/>}/>
          <Route path= '/manageEvtol' element = {<MngEvtol/>} />
          <Route path='/medications' element = {<Medication/>} />
