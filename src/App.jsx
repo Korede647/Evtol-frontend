@@ -13,6 +13,7 @@ import Login from './pages/Login'
 import Home from "../pages/Home"
 import About from './components/About'
 import Contact from './components/Contact'
+import Gallery from './components/Gallery'
 
 function App() {
   return (
