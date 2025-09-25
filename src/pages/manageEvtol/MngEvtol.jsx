@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./mngEvtol.css";
 import SideBar from "../../components/sidebar/SideBar";
-import { VIEWALLEVTOL_URL } from "../../components/API_URL";
+import { DELIVERMEDICATION_URL, VIEWALLEVTOL_URL } from "../../components/API_URL";
 import axios from "axios";
 import Pagination from "../../components/Pagination";
 
 const MngEvtol = () => {
   const [evtol, setEvtol] = useState([]);
+  const [deliveringEvtol, setDeliveringEvtol] = useState([])
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage] = useState(5);
 
@@ -27,7 +28,21 @@ const MngEvtol = () => {
         <p>Error Retrieving Evtol</p>;
       }
     };
+
+     const deliverMedication = async () => {
+      const response = await axios.get(`${DELIVERMEDICATION_URL}/${evtol.serialNo}`, {
+        headers: {
+          Authorization: `Bearer ${Token}`
+        }
+      })
+     if(response.status === 201){
+      setDeliveringEvtol(response.data.status)
+      console.log(response.data);
+     }
+    }
+
     fetchData();
+    deliverMedication()
   }, []);
 
   const indexOfLastPost = currentPage * postPerPage;
@@ -71,6 +86,7 @@ const MngEvtol = () => {
                       ? `text-yellow-500 font-bold`
                       : `text-red-600 font-bold`
                     }>{evtol.batteryCapacity}%</td>
+                    {evtol.status != deliveringEvtol.status ? (
                     <td
                       className={
                         evtol.status === "IDLE"
@@ -88,6 +104,21 @@ const MngEvtol = () => {
                     >
                       {evtol.status}
                     </td>
+                     ) : <td
+                     className={
+                      deliveringEvtol.status === "IDLE"
+                        ? `text-blue-800 font-bold`
+                        : deliveringEvtol.status === "LOADING"
+                        ? `text-yellow-800 font-bold`
+                        : deliveringEvtol.status === "LOADED"
+                        ? `text-red-600 font-bold`
+                        : deliveringEvtol.status === "DELIVERING"
+                        ? `text-green-600 font-bold`
+                        : deliveringEvtol.status === "DELIVERED"
+                        ? `text-purple-800 font-bold`
+                        : `text-fuchisa-800 font-bold`
+                    }
+                     >{deliveringEvtol.status}</td>}
                   </tr>
                 ))}
               </tbody>

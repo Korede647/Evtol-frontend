@@ -24,7 +24,7 @@ const SideBar = () => {
       color: "lightgrey"
      }} />
      <h1>
-     EVTOL</h1>
+     SKYMED</h1>
      </div>
 
       <div className="usersideDiv">

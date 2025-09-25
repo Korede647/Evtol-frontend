@@ -56,7 +56,9 @@ const Signup = () => {
             JSON.parse(localStorage.getItem("userToken"))
             navigate("/logIn");
           });
+          return;
         }
+
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
@@ -70,7 +72,7 @@ const Signup = () => {
   return (
     <>
     
-    <div className=" w-100 bg-white p-10 rounded-lg shadow-lg mx-115 my-30">
+    <div className=" w-100 bg-whitesmoke p-10 rounded-lg shadow-lg mx-115 my-10">
       <div className="flex flex-wrap gap-5 items-center w-full max-md:max-w-full mb-10">
         <div className="flex flex-wrap flex-1 shrink gap-3 items-center self-stretch my-auto basis-0 min-w-[240px] max-md:max-w-full ">
           <h2 className="text-blue-900 font-medium text-[20px]">Create an Account</h2>

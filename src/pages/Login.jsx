@@ -37,7 +37,7 @@ const Login = () => {
       try{
         const response = await axios.post(LOGIN_URL, {
             email,
-            password
+            password,
         })
         if(response.status === 201){
           Swal.fire({
@@ -52,6 +52,7 @@ const Login = () => {
             console.log(response.data)
             localStorage.setItem("Token", (response.data.accessToken))
             JSON.parse(localStorage.getItem("Token"))
+            return
         }
 
         Swal.fire({
