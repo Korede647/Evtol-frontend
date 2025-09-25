@@ -11,6 +11,7 @@ import BatteryLog from './pages/batteryLog/BatteryLog'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
 import Home from "../pages/Home"
+import About from './components/About'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/signup' element = {<Signup/>} />
         <Route path='/login' element = {<Login/>} />
         <Route path='/gallery' element = {<Gallery/>} />
+        <Route path='/about' element = {<About/>} />
         <Route path='/dashboard' element = {<Dashboard/>}/>
          <Route path= '/manageEvtol' element = {<MngEvtol/>} />
          <Route path='/medications' element = {<Medication/>} />
