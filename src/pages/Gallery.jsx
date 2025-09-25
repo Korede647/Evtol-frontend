@@ -1,4 +1,4 @@
-import Navigation from "@/components/Navigation";
+import Navigation from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import heroEvtol from "@/assets/hero-evtol.jpg";
 import medicalDrone from "@/assets/medical-drone.jpg";
