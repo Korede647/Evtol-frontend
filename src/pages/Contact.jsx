@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Navigation from "@/components/Navbar";
+import Navigation from "./components/Navbar";
 import Footer from "@/components/Footer";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";

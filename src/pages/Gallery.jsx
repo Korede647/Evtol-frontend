@@ -1,9 +1,9 @@
-import Navigation from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import heroEvtol from "@/assets/hero-evtol.jpg";
-import medicalDrone from "@/assets/medical-drone.jpg";
-import medicalSupplies from "@/assets/medical-supplies.jpg";
-import evtolFleet from "@/assets/evtol-fleet.jpg";
+import Navigation from "../components/Navbar";
+import Footer from "../components/Footer";
+import heroEvtol from "../assets/hero-evtol.jpg";
+import medicalDrone from "../assets/medical-drone.jpg";
+import medicalSupplies from "../assets/medical-supplies.jpg";
+import evtolFleet from "../assets/evtol-fleet.jpg";
 
 const Gallery = () => {
   const evtolImages = [

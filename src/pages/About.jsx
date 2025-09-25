@@ -1,8 +1,8 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { Target, Users, Lightbulb, Award, Heart, Leaf } from "lucide-react";
-import medicalDrone from "@/assets/medical-drone.jpg";
-import evtolFleet from "@/assets/evtol-fleet.jpg";
+import medicalDrone from "../assets/medical-drone.jpg";
+import evtolFleet from "../assets/evtol-fleet.jpg";
 
 const About = () => {
   const values = [

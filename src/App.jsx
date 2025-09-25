@@ -2,9 +2,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
 import { TooltipProvider } from "./components/ui/tooltip";
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster } from "./components/ui/toaster";
+import { Toaster as Sonner } from "./components/ui/sonner";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import MngEvtol from './pages/manageEvtol/MngEvtol'
 import Medication from './pages/medication/Medication'
