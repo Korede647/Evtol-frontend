@@ -110,7 +110,9 @@ All colors MUST be HSL. Features futuristic gradients and animations.
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
+    border-width: 1px;
+    border-style: solid;
   }
 
   body {

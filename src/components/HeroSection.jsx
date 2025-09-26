@@ -1,5 +1,5 @@
 import { ArrowRight, Play } from "lucide-react";
-import heroImage from "@/assets/hero-evtol.jpg";
+import heroImage from "../assets/hero-evtol.jpg";
 
 const HeroSection = () => {
   return (

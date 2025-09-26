@@ -1,5 +1,5 @@
 import { Target, Heart, Leaf, Users } from "lucide-react";
-import medicalDrone from "@/assets/medical-drone.jpg";
+import medicalDrone from "../assets/medical-drone.jpg";
 
 const AboutSection = () => {
   const values = [

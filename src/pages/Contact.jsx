@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Navigation from "./components/Navbar";
-import Footer from "@/components/Footer";
+import Navigation from "../components/Navbar";
+import Footer from "../components/Footer";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { useToast } from "../hooks/use-toast";
 
 const Contact = () => {
   const { toast } = useToast();
