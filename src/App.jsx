@@ -19,6 +19,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
 import FAQ from './pages/FAQ';
+import NotFound from './pages/NotFound'
 
 const queryClient = new QueryClient();
 
