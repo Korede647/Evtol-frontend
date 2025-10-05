@@ -3,12 +3,26 @@
 const CREATEVTOL_URL = "http://localhost:7000/api/v1/evtol/"
 
 // const VIEWALLEVTOL_URL = "https://kory617-evtol-backend.onrender.com/api/v1/evtol/all"
-const VIEWALLEVTOL_URL = "http://localhost:7000/api/v1/evtol/all/available"
+const VIEWALLEVTOL_URL = "http://localhost:7000/api/v1/evtol/all/evtol"
 
 // const AVAILABLEVTOL_URL = "https://kory617-evtol-backend.onrender.com/api/v1/evtol/"
-const AVAILABLEVTOL_URL = "http://localhost:7000/api/v1/evtol/"
+const AVAILABLEVTOL_URL = "http://localhost:7000/api/v1/evtol/all/available"
 
 // const MEDICATIONS_URL = "https://kory617-evtol-backend.onrender.com/api/v1/evtol/allMedic"
 const MEDICATIONS_URL = "http://localhost:7000/api/v1/medications/"
 
-export {CREATEVTOL_URL, VIEWALLEVTOL_URL, AVAILABLEVTOL_URL, MEDICATIONS_URL}
+const CREATEUSER_URL = "http://localhost:7000/api/v1/users"
+
+const LOGIN_URL = "http://localhost:7000/api/v1/auth/login"
+
+const LOADEVTOL_URL = "http://localhost:7000/api/v1/evtol/loadEvtol"
+
+const LOADEDMEDICATION_URL = "http://localhost:7000/api/v1/evtol/loadedMedication"
+
+const LOADEDEVTOL_URL = "http://localhost:7000/api/v1/evtol/loaded/Evtol"
+
+const DELIVERMEDICATION_URL = "http://localhost:7000/api/v1/evtol/deliveringMedications"
+
+const BATTERYLEVEL_URL = "http://localhost:7000/api/v1/evtol/batteryLevel"
+
+export {CREATEVTOL_URL, VIEWALLEVTOL_URL, BATTERYLEVEL_URL, DELIVERMEDICATION_URL, LOADEDEVTOL_URL, AVAILABLEVTOL_URL, MEDICATIONS_URL, CREATEUSER_URL, LOGIN_URL, LOADEVTOL_URL, LOADEDMEDICATION_URL}

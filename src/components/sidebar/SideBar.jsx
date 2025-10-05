@@ -24,13 +24,13 @@ const SideBar = () => {
       color: "lightgrey"
      }} />
      <h1>
-     EVTOL</h1>
+     SKYMED</h1>
      </div>
 
       <div className="usersideDiv">
       <NavLink 
       className= "link"
-      to="/" 
+      to="/dashboard" 
         style={({isActive}) => {
           return isActive ?  {
             color: ' #95929a',
@@ -40,7 +40,8 @@ const SideBar = () => {
           } : {
             color: '#95929a'
         }
-        }}>
+        }}
+        >
         <BiSolidDashboard/> Dashboard
             </NavLink>
       </div>

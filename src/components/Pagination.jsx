@@ -1,14 +1,14 @@
 import React from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-const Pagination = ({ postPerPage, totalPosts, paginate, currentPage }) => {
+const Pagination = ({ postPerPage, totalPosts, paginate, currentPage}) => {
   const pageNumbers = [];
   const totalPages = Math.ceil(totalPosts / postPerPage)
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
   }
   return (
-    <div className="w-full h-25 flex justify-center items-center gap-10 ">
+    <div className= {`w-fit h-25 flex justify-center items-center gap-145 ml-15`}>
   
           <button
             onClick={() => paginate(currentPage - 1)}
@@ -16,7 +16,7 @@ const Pagination = ({ postPerPage, totalPosts, paginate, currentPage }) => {
             className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300  ${
               currentPage === 1
                 ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                : "bg-blue-700 text-white hover:bg-blue-800 hover:scale-105 cursor-pointer shadow-md"
+                : "bg-blue-200 text-white hover:bg-blue-300 hover:scale-105 cursor-pointer shadow-md"
             }`}
           >
            <IoIosArrowBack size={20}/>
@@ -30,7 +30,7 @@ const Pagination = ({ postPerPage, totalPosts, paginate, currentPage }) => {
             className={`flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${
               currentPage === totalPages
                 ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                : "bg-blue-700 text-white hover:bg-blue-800 hover:scale-105 cursor-pointer shadow-md"
+                : "bg-blue-200 text-white hover:bg-blue-300 hover:scale-105 cursor-pointer shadow-md"
             }`}
           >
           <IoIosArrowForward size={20}/>

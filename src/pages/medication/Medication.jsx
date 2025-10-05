@@ -3,13 +3,27 @@ import "./medication.css"
 import SideBar from '../../components/sidebar/SideBar'
 import axios from 'axios'
 import { MEDICATIONS_URL } from '../../components/API_URL'
+import Pagination from '../../components/Pagination'
+import Modal from '../../components/Modal'
 
 const Medication = () => {
+  const [isOpen, setIsOpen] = useState(false)
   const [medication, setMedication] = useState([])
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postPerPage] = useState(6)
+
+  const Token = localStorage.getItem("Token")
+  const handleModalDisplay = () => {
+    setIsOpen(true)
+  }
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get(MEDICATIONS_URL)
+      const response = await axios.get(MEDICATIONS_URL, {
+        headers: {
+          Authorization: `Bearer ${Token}`
+        }
+      })
       if(response.status === 200){
         setMedication(response.data.medics)
         console.log(response.data)
@@ -21,6 +35,16 @@ const Medication = () => {
     fetchData();
   }, [])
 
+  const indexOfLastPost = currentPage * postPerPage;
+  const indexOfFirstPost = indexOfLastPost - postPerPage;
+  const currentMedics = medication.slice(indexOfFirstPost, indexOfLastPost);
+
+  const paginate = (num) => {
+    if (num >= 1 && num <= Math.ceil(medication.length / postPerPage)) {
+      setCurrentPage(num);
+    }
+  }
+
   return (
     <div className='medicMain'>
        <SideBar/>
@@ -28,13 +52,14 @@ const Medication = () => {
 
         <div className="medictop">
         <h2>Medications</h2>
-        <button>Add New Medication</button>
+        <button className='cursor-pointer' onClick={handleModalDisplay}>Add New Medication</button>
         </div>
 
-         {medication.length > 0 ? (
+         {currentMedics.length > 0 ? (
+          <div>
         <div className="medicCards">
-             {medication.map((medic) => (
-            <div className="card">
+             {currentMedics.map((medic) => (
+            <div className="card" key= {medic.code}>
                  <div className="image">
                  <img src= {medic.image} alt="" />
              </div>
@@ -42,9 +67,18 @@ const Medication = () => {
                  <p>Name: <b>{medic.name}</b></p>
                  <p>Code: <b>{medic.code}</b></p>
                  <p>Weight: <b>{medic.weight}g</b></p>
+                 <p>Price: <b>N{medic.price}</b></p>
              </div>
              </div>
               ))}
+           </div>
+           <Pagination
+           postPerPage={postPerPage}
+           totalPosts={medication.length}
+           paginate={paginate}
+           currentPage={currentPage}
+          
+           />
            </div>
           ): (
             <p>No Medications Found</p>
@@ -52,6 +86,9 @@ const Medication = () => {
           
 
        </div>
+       {isOpen && (
+        <Modal/>
+       )}
     </div>
   )
 }
