@@ -109,12 +109,12 @@ All colors MUST be HSL. Features futuristic gradients and animations.
 }
 
 @layer base {
-  * {
+  /* * {
     @apply border-border;
-  }
+  } */
 
   body {
-    @apply bg-background text-foreground;
+     @apply border-border bg-background text-foreground;
     font-family: 'Poppins', sans-serif;
   }
 }
